@@ -70,9 +70,12 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="flex flex-wrap gap-4"
               >
-                <Link to="/about" className="bg-teal text-white px-8 py-4 rounded-lg font-semibold hover:bg-teal-dark transition-colors inline-flex items-center">
-                  Learn More
-                </Link>
+                <button
+                  onClick={() => triggerGetInvolvedModal('Request Support')}
+                  className="bg-coral text-white px-8 py-4 rounded-lg font-semibold hover:bg-coral/95 transition-colors inline-flex items-center cursor-pointer border-0 shadow-sm"
+                >
+                  Request Support
+                </button>
                 <Link to="/about" className="bg-transparent border-2 border-teal text-teal px-8 py-4 rounded-lg font-semibold hover:bg-teal hover:text-white transition-colors inline-flex items-center">
                   Our Story
                 </Link>
