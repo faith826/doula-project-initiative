@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, XCircle, HeartHandshake, Baby, Speech, Stethoscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { triggerGetInvolvedModal } from '../components/GetInvolvedModal';
-const doulaHero = '/src/assets/images/doula_hero_1784436366793.jpg';
+import doulaHero from '../assets/images/doula_hero_1784436366793.jpg';
 
 export default function WhatIsADoula() {
   const slides = [

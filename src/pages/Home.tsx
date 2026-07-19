@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Activity, Baby, BookHeart, Quote, ArrowRight, ShieldCheck, Users, Search, Download, HelpCircle, Newspaper, Calendar, MapPin, Mail, Phone, ChevronRight, CheckSquare, FileText } from 'lucide-react';
 import { triggerGetInvolvedModal } from '../components/GetInvolvedModal';
-const homeHero = '/src/assets/images/home_hero_1784436332838.jpg';
+import homeHero from '../assets/images/home_hero_1784436332838.jpg';
 
 function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: string }) {
   const [count, setCount] = useState(0);

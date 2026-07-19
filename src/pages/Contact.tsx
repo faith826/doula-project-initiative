@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Phone, MapPin, Bell } from 'lucide-react';
-const contactHero = '/src/assets/images/contact_hero_1784436383338.jpg';
+import contactHero from '../assets/images/contact_hero_1784436383338.jpg';
 
 export default function Contact() {
   const [newsletterEmail, setNewsletterEmail] = useState('');
