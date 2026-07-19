@@ -1,11 +1,23 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Bell } from 'lucide-react';
+const contactHero = '/src/assets/images/contact_hero_1784436383338.jpg';
 
 export default function Contact() {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      setIsSubscribed(true);
+      setNewsletterEmail('');
+    }
+  };
+
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=1600',
+      image: contactHero,
       title: 'Contact Us',
       subtitle: "We'd love to hear from you. Reach out with any questions, partnership inquiries, or to request doula support."
     },
@@ -144,6 +156,61 @@ export default function Contact() {
                    </div>
                  </div>
                </div>
+             </div>
+
+             {/* Newsletter Section */}
+             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border mt-8">
+               <div className="flex items-start gap-4 mb-6">
+                 <div className="w-12 h-12 rounded-full bg-coral/10 flex items-center justify-center shrink-0">
+                   <Bell className="w-5 h-5 text-coral" />
+                 </div>
+                 <div>
+                   <h3 className="text-xl font-bold font-heading text-teal">Subscribe to our newsletter</h3>
+                   <p className="text-charcoal/60 text-sm mt-1">
+                     Receive updates on workshops, resources, events, and inspiring stories from the community.
+                   </p>
+                 </div>
+               </div>
+
+               <AnimatePresence mode="wait">
+                 {isSubscribed ? (
+                   <motion.div
+                     key="success"
+                     initial={{ opacity: 0, height: 0 }}
+                     animate={{ opacity: 1, height: 'auto' }}
+                     exit={{ opacity: 0, height: 0 }}
+                     className="p-4 bg-teal/10 text-teal-dark rounded-xl text-sm font-semibold flex items-center gap-2 border border-teal/20"
+                   >
+                     <span className="text-base">✓</span> Thank you for subscribing to our newsletter!
+                   </motion.div>
+                 ) : (
+                   <motion.form
+                     key="form"
+                     onSubmit={handleSubscribe}
+                     className="space-y-3"
+                   >
+                     <div className="flex flex-col sm:flex-row gap-3">
+                       <input
+                         type="email"
+                         required
+                         value={newsletterEmail}
+                         onChange={(e) => setNewsletterEmail(e.target.value)}
+                         placeholder="Your email address"
+                         className="flex-grow px-4 py-2.5 rounded-xl border border-border bg-cream/30 text-sm focus:outline-none focus:ring-2 focus:ring-teal/50"
+                       />
+                       <button
+                         type="submit"
+                         className="bg-teal hover:bg-teal-dark text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition-colors cursor-pointer shrink-0"
+                       >
+                         Subscribe
+                       </button>
+                     </div>
+                     <p className="text-[11px] text-charcoal/50 leading-normal">
+                       By subscribing, you agree to receive communications from us. You can unsubscribe at any time.
+                     </p>
+                   </motion.form>
+                 )}
+               </AnimatePresence>
              </div>
           </div>
           

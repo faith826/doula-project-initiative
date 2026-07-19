@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, XCircle, HeartHandshake, Baby, Speech, Stethoscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { triggerGetInvolvedModal } from '../components/GetInvolvedModal';
+const doulaHero = '/src/assets/images/doula_hero_1784436366793.jpg';
 
 export default function WhatIsADoula() {
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1531983412531-1f49a365ffed?q=80&w=1600',
+      image: doulaHero,
       title: 'What Is a Doula?',
       subtitle: 'A trained birth companion who provides emotional, physical, and informational support during pregnancy, labor, birth, and the postpartum period.'
     },

@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Shield, Users, Lightbulb, MessageCircle, Scale } from 'lucide-react';
+const aboutHero = '/src/assets/images/about_hero_1784436352027.jpg';
+const aboutCommunityHero = '/src/assets/images/about_community_hero_1784437125598.jpg';
 
 export default function About() {
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1531206715517-5c0ba140e2b8?q=80&w=1600',
+      image: aboutHero,
       title: 'About Us',
       subtitle: 'A collaborative initiative between TNL Partnerships and Utulivu Women\'s Group dedicated to transforming maternal health with dignity and compassion.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=1600',
+      image: aboutCommunityHero,
       title: 'Led by the Community',
       subtitle: 'Empowering local African women with skills to support mothers before, during, and after childbirth.'
     },

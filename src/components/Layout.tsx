@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import GetInvolvedModal from './GetInvolvedModal';
@@ -7,6 +7,14 @@ import GetInvolvedModal from './GetInvolvedModal';
 export default function Layout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState('Become a Doula');
+  const location = useLocation();
+
+  // Scroll to top on route change, unless hash is present
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     const handleOpen = (e: Event) => {

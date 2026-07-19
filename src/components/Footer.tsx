@@ -10,12 +10,7 @@ export default function Footer() {
           {/* Brand & Mission */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-teal flex-shrink-0"></div>
-              <div className="flex flex-col">
-                <span className="font-heading text-xl font-bold leading-tight text-teal uppercase tracking-tight">
-                  The Doula Project
-                </span>
-              </div>
+              <img src="https://i.postimg.cc/k4PHWn40/doula.png" alt="The Doula Project Logo" className="h-12 w-auto mix-blend-multiply" />
             </Link>
             <p className="text-charcoal/70 text-sm leading-relaxed max-w-xs">
               Improving maternal wellbeing through accessible doula services, community engagement, and evidence-based support systems.
@@ -45,6 +40,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/#impact" className="text-charcoal/70 hover:text-teal transition-colors text-sm">Impact & Stories</Link>
+              </li>
+              <li>
+                <Link to="/resources" className="text-charcoal/70 hover:text-teal transition-colors text-sm">Free Resources</Link>
               </li>
               <li>
                 <Link to="/#resources" className="text-charcoal/70 hover:text-teal transition-colors text-sm">Research & Evidence</Link>
@@ -100,8 +98,8 @@ export default function Footer() {
             <span className="text-teal">Primary Partner: TNL Partnerships</span> <span className="mx-2 hidden md:inline">|</span> Community Partner: Utulivu Women's Group (UWG)
           </p>
           <div className="flex gap-6 uppercase tracking-widest text-[11px] font-semibold">
-            <Link to="#" className="text-charcoal/50 hover:text-teal transition-colors">Privacy Policy</Link>
-            <Link to="#" className="text-charcoal/50 hover:text-teal transition-colors">Terms of Use</Link>
+            <Link to="/privacy-policy" className="text-charcoal/50 hover:text-teal transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-use" className="text-charcoal/50 hover:text-teal transition-colors">Terms of Use</Link>
           </div>
         </div>
       </div>

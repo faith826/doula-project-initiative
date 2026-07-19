@@ -12,6 +12,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'What Is a Doula?', path: '/what-is-a-doula' },
+    { name: 'Resources', path: '/resources' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -26,23 +27,20 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-teal flex-shrink-0"></div>
-              <span className="font-bold text-lg tracking-tight text-teal uppercase">
-                The Doula Project
-              </span>
+              <img src="https://i.postimg.cc/k4PHWn40/doula.png" alt="The Doula Project Logo" className="h-12 w-auto mix-blend-multiply" />
             </Link>
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:block">
-            <div className="flex items-center gap-8 font-medium text-sm text-charcoal/80">
+            <div className="flex items-center gap-10 font-semibold text-base text-charcoal/80">
               {navLinks.map((link) => (
                 <div key={link.name} className="relative group">
                   <Link
                     to={link.path}
                     className={`flex items-center transition-colors ${
                       isActive(link.path)
-                        ? 'text-teal font-bold'
+                        ? 'text-teal font-extrabold'
                         : 'hover:text-teal'
                     }`}
                   >
@@ -56,7 +54,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <button
               onClick={() => triggerGetInvolvedModal('Request Support')}
-              className="px-6 py-2.5 bg-coral text-white text-sm font-semibold rounded-full shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+              className="px-7 py-3 bg-coral text-white text-base font-bold rounded-full shadow-sm hover:shadow-md transition-shadow cursor-pointer"
             >
               Request Support
             </button>
@@ -94,9 +92,9 @@ export default function Navbar() {
                   <Link
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-3 py-2 rounded-md text-base font-medium ${
+                    className={`block px-4 py-3 rounded-md text-lg font-semibold ${
                       isActive(link.path)
-                        ? 'text-teal bg-teal/10'
+                        ? 'text-teal bg-teal/10 font-bold'
                         : 'text-charcoal hover:bg-beige'
                     }`}
                   >
@@ -110,7 +108,7 @@ export default function Navbar() {
                     setIsOpen(false);
                     triggerGetInvolvedModal('Request Support');
                   }}
-                  className="block w-full text-center bg-coral text-white px-5 py-3 rounded-md font-medium hover:bg-coral/90 transition-colors cursor-pointer border-0"
+                  className="block w-full text-center bg-coral text-white px-5 py-3.5 rounded-md font-bold text-lg hover:bg-coral/90 transition-colors cursor-pointer border-0"
                 >
                   Request Support
                 </button>

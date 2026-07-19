@@ -1,29 +1,76 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Heart, Activity, Baby, BookHeart, Quote, ArrowRight, ShieldCheck, Users, Search, Download, HelpCircle, Newspaper, Calendar, MapPin, Mail, Phone, ChevronRight } from 'lucide-react';
+import { Heart, Activity, Baby, BookHeart, Quote, ArrowRight, ShieldCheck, Users, Search, Download, HelpCircle, Newspaper, Calendar, MapPin, Mail, Phone, ChevronRight, CheckSquare, FileText } from 'lucide-react';
 import { triggerGetInvolvedModal } from '../components/GetInvolvedModal';
+const homeHero = '/src/assets/images/home_hero_1784436332838.jpg';
+
+function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    let observer: IntersectionObserver | null = null;
+    let animationFrameId: number;
+    
+    const startCount = () => {
+      const duration = 2000; // 2 seconds animation
+      const startTime = performance.now();
+      
+      const updateCount = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function outQuad
+        const easeProgress = progress * (2 - progress);
+        const currentCount = Math.floor(easeProgress * value);
+        
+        setCount(currentCount);
+        
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(updateCount);
+        } else {
+          setCount(value);
+        }
+      };
+      
+      animationFrameId = requestAnimationFrame(updateCount);
+    };
+
+    if (ref.current) {
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startCount();
+            if (observer) {
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (observer) observer.disconnect();
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
+  }, [value]);
+
+  const formatNumber = (num: number) => {
+    return num.toLocaleString();
+  };
+
+  return (
+    <div ref={ref} className="text-4xl md:text-5xl font-bold mb-1 font-heading">
+      {formatNumber(count)}{suffix}
+    </div>
+  );
+}
 
 export default function Home() {
   const location = useLocation();
-
-  const quotes = [
-    { text: "Every mother deserves a companion.", author: "Classic Doula Saying" },
-    { text: "Birth is not only about making babies. Birth is about making mothers.", author: "Janice Clarfield" },
-    { text: "There is a power that comes when a mother is supported with dignity.", author: "The Doula Project" },
-    { text: "If a doula were a drug, it would be unethical not to use it.", author: "Dr. John H. Kennell" },
-    { text: "Supported mothers raise supported families.", author: "Community Care Principle" },
-    { text: "A doula's presence brings peace, strength, and gentle guidance to birth.", author: "Maternal Health Focus" }
-  ];
-
-  const [currentQuote, setCurrentQuote] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentQuote((prev) => (prev + 1) % quotes.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [quotes.length]);
 
   useEffect(() => {
     if (location.hash) {
@@ -40,17 +87,14 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-cream py-12 lg:py-20 border-b border-border">
+      <section className="relative overflow-hidden bg-cream py-4 lg:py-6 border-b border-border">
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="flex-1">
-              <div className="inline-block px-3 py-1 bg-sage/20 text-teal text-[10px] font-bold tracking-widest uppercase rounded mb-6">
-                TNL Partnerships & Utulivu Women's Group
-              </div>
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-5xl md:text-6xl font-bold font-heading text-charcoal leading-[1.05] tracking-tight mb-8"
+                className="text-5xl md:text-6xl font-bold font-heading text-charcoal leading-[1.05] tracking-tight mb-6"
               >
                 Supporting Mothers.<br />
                 Empowering Families.<br />
@@ -60,7 +104,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-lg text-charcoal/70 leading-relaxed max-w-xl mb-10"
+                className="text-lg text-charcoal/70 leading-relaxed max-w-xl mb-8"
               >
                 Providing continuous emotional, physical, and informational support to mothers through trained community doulas in the heart of our community.
               </motion.p>
@@ -82,49 +126,14 @@ export default function Home() {
               </motion.div>
             </div>
             
-            <div className="w-full lg:w-[410px] h-[340px] bg-beige rounded-[40px] relative overflow-hidden flex flex-col justify-between border-8 border-white shadow-xl shrink-0 mt-8 lg:mt-0 p-8">
-              <div className="absolute inset-0 bg-sage opacity-10"></div>
-              <div className="w-48 h-48 rounded-full bg-teal opacity-20 blur-2xl absolute"></div>
-              <div className="w-32 h-32 rounded-full bg-coral opacity-30 absolute -bottom-10 -right-10 blur-xl"></div>
-              
-              <div className="z-10 text-center w-full flex-grow flex flex-col justify-center">
-                <Quote className="w-8 h-8 text-teal/20 mx-auto mb-3" />
-                <div className="relative h-[150px] flex items-center justify-center overflow-hidden">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentQuote}
-                      initial={{ opacity: 0, y: 15, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -15, scale: 0.98 }}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="absolute px-2"
-                    >
-                      <p className="text-teal font-serif italic text-xl md:text-2xl leading-relaxed">
-                        {quotes[currentQuote].text}
-                      </p>
-                      {quotes[currentQuote].author && (
-                        <p className="text-teal-dark/60 font-sans text-[10px] uppercase tracking-widest mt-3.5 font-bold">
-                          — {quotes[currentQuote].author}
-                        </p>
-                      )}
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
-
-              {/* Mini Pagination Indicators */}
-              <div className="relative z-10 flex justify-center gap-1.5 mt-2">
-                {quotes.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentQuote(idx)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      currentQuote === idx ? 'bg-teal w-6 shadow-sm' : 'bg-teal/20 hover:bg-teal/40'
-                    }`}
-                    aria-label={`Go to quote ${idx + 1}`}
-                  />
-                ))}
-              </div>
+            <div className="w-full lg:w-[450px] h-[340px] rounded-[40px] relative overflow-hidden border-8 border-white shadow-xl shrink-0 mt-8 lg:mt-0">
+              <img 
+                src={homeHero} 
+                alt="Supportive community of Black African mothers and community health workers" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-charcoal/10 mix-blend-multiply" />
             </div>
           </div>
         </div>
@@ -251,10 +260,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 overflow-hidden md:grid-cols-2 rounded-2xl border border-beige bg-cream">
             {[
-              { title: 'Pregnancy Support', desc: 'Prenatal visits, birth planning, and emotional readiness.', img: 'https://i.postimg.cc/fL9zVkD7/Pregnancy-Support-1.png' },
-              { title: 'Birth Support', desc: 'Continuous presence, advocacy, and comfort measures during labor.', img: 'https://i.postimg.cc/dQhHTrMJ/birth-support-photo.png' },
-              { title: 'Postpartum Support', desc: 'In-home visits, feeding support, and maternal recovery.', img: 'https://i.postimg.cc/VvtWZ91z/postpartum-support-photo.png' },
-              { title: 'Family Education', desc: 'Workshops for partners and family members to support the mother.', img: 'https://i.postimg.cc/pTFjP27M/family-education-photo.png' }
+              { title: 'Pregnancy Support', desc: 'Prenatal visits, birth planning, and emotional readiness.', img: 'https://i.postimg.cc/fL9zVkD7/Pregnancy-Support-1.png', link: '/services/pregnancy-support' },
+              { title: 'Birth Support', desc: 'Continuous presence, advocacy, and comfort measures during labor.', img: 'https://i.postimg.cc/dQhHTrMJ/birth-support-photo.png', link: '/services/birth-support' },
+              { title: 'Postpartum Support', desc: 'In-home visits, feeding support, and maternal recovery.', img: 'https://i.postimg.cc/VvtWZ91z/postpartum-support-photo.png', link: '/services/postpartum-support' },
+              { title: 'Family Education', desc: 'Workshops for partners and family members to support the mother.', img: 'https://i.postimg.cc/pTFjP27M/family-education-photo.png', link: '/services/family-education' }
             ].map((service, idx) => (
               <div key={idx} className="flex flex-col sm:flex-row group bg-white border-b border-r border-beige">
                 <div className="sm:w-2/5 aspect-square sm:aspect-auto overflow-hidden">
@@ -263,7 +272,7 @@ export default function Home() {
                 <div className="sm:w-3/5 p-8 flex flex-col justify-center">
                   <h3 className="text-xl font-bold font-heading text-teal mb-2">{service.title}</h3>
                   <p className="text-charcoal/70 mb-6 text-sm">{service.desc}</p>
-                  <Link to="/#contact" className="text-coral font-medium inline-flex items-center gap-1 hover:gap-2 transition-all mt-auto w-fit">
+                  <Link to={service.link} className="text-coral font-medium inline-flex items-center gap-1 hover:gap-2 transition-all mt-auto w-fit">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -278,22 +287,22 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="w-full bg-teal rounded-3xl p-6 md:p-8 flex flex-col md:flex-row justify-around items-center text-white gap-8 md:gap-0">
             <div className="text-center">
-              <div className="text-3xl font-bold mb-1">500+</div>
+              <AnimatedCounter value={500} suffix="+" />
               <div className="text-[10px] uppercase tracking-widest opacity-80">Mothers Supported</div>
             </div>
             <div className="hidden md:block w-px h-10 bg-white/20"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-1">42</div>
+              <AnimatedCounter value={42} />
               <div className="text-[10px] uppercase tracking-widest opacity-80">Doulas Trained</div>
             </div>
             <div className="hidden md:block w-px h-10 bg-white/20"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-1">1,200</div>
+              <AnimatedCounter value={1200} />
               <div className="text-[10px] uppercase tracking-widest opacity-80">Families Reached</div>
             </div>
             <div className="hidden md:block w-px h-10 bg-white/20"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-1">15+</div>
+              <AnimatedCounter value={15} suffix="+" />
               <div className="text-[10px] uppercase tracking-widest opacity-80">Community Partners</div>
             </div>
           </div>
@@ -426,59 +435,69 @@ export default function Home() {
       </section>
 
       {/* Resources Section */}
-      <section id="resources" className="py-20 bg-white">
+      <section id="resources" className="py-20 bg-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-teal mb-4">
-                Resources
+              <div className="inline-block bg-peach px-4 py-1.5 rounded-full text-coral font-medium text-sm mb-4">
+                Free Educational Materials
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading text-charcoal mb-4">
+                Resources for Your Journey
               </h2>
               <p className="text-charcoal/80 text-lg">
-                Access our library of maternal health guides, research reports, and latest updates.
+                Download our practical guides and templates to help you prepare for labour, birth, and your postpartum experience.
               </p>
             </div>
+            <Link to="/resources" className="text-teal font-semibold hover:text-teal-dark inline-flex items-center gap-2">
+              View All Resources <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <div className="bg-beige p-8 rounded-2xl flex items-start gap-6 border border-border hover:shadow-md transition-shadow">
-              <div className="bg-white p-4 rounded-xl shadow-sm">
-                <Download className="w-8 h-8 text-teal" />
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {/* Hospital Bag Checklist Card */}
+            <Link to="/resources/hospital-bag-checklist" className="block bg-sage/20 rounded-[32px] p-8 relative overflow-hidden group hover:shadow-lg transition-all duration-300 border border-white">
+              <div className="bg-white/80 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                <CheckSquare className="w-7 h-7 text-teal" />
               </div>
-              <div>
-                <h3 className="text-xl font-bold font-heading text-teal mb-2">Maternal Health Guides</h3>
-                <p className="text-charcoal/70 mb-4 text-sm">Download free guides on birth planning, postpartum recovery, and newborn care.</p>
-                <Link to="#" className="text-teal font-medium text-sm flex items-center gap-1 hover:underline">View Library <ChevronRight className="w-4 h-4" /></Link>
+              <h3 className="text-2xl font-bold font-heading text-charcoal mb-3">Hospital Bag Checklist</h3>
+              <p className="text-charcoal/70 mb-8 leading-relaxed max-w-md">
+                A practical checklist to help expectant mothers and birth partners prepare everything needed for labour, birth, and the first days after delivery.
+              </p>
+              <div 
+                className="inline-flex items-center gap-2 bg-white text-charcoal font-semibold px-6 py-3 rounded-full hover:shadow-md transition-shadow group-hover:bg-charcoal group-hover:text-white"
+              >
+                <Download className="w-4 h-4" />
+                View & Download
               </div>
-            </div>
-            <div className="bg-beige p-8 rounded-2xl flex items-start gap-6 border border-border hover:shadow-md transition-shadow">
-              <div className="bg-white p-4 rounded-xl shadow-sm">
-                <Search className="w-8 h-8 text-teal" />
+            </Link>
+
+            {/* My Birth Plan Card */}
+            <Link to="/resources/my-birth-plan" className="block bg-peach/30 rounded-[32px] p-8 relative overflow-hidden group hover:shadow-lg transition-all duration-300 border border-white">
+              <div className="bg-white/80 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                <FileText className="w-7 h-7 text-coral" />
               </div>
-              <div>
-                <h3 className="text-xl font-bold font-heading text-teal mb-2">Research Reports</h3>
-                <p className="text-charcoal/70 mb-4 text-sm">Explore our community-based participatory research findings and impact data.</p>
-                <Link to="#" className="text-teal font-medium text-sm flex items-center gap-1 hover:underline">Read Reports <ChevronRight className="w-4 h-4" /></Link>
+              <h3 className="text-2xl font-bold font-heading text-charcoal mb-3">My Birth Plan</h3>
+              <p className="text-charcoal/70 mb-8 leading-relaxed max-w-md">
+                A simple birth plan template that helps mothers communicate their preferences, pain relief choices, birth partner information, feeding plans, and cultural or personal wishes with their healthcare team.
+              </p>
+              <div 
+                className="inline-flex items-center gap-2 bg-white text-charcoal font-semibold px-6 py-3 rounded-full hover:shadow-md transition-shadow group-hover:bg-charcoal group-hover:text-white"
+              >
+                <Download className="w-4 h-4" />
+                View & Download
               </div>
-            </div>
-            <div className="bg-beige p-8 rounded-2xl flex items-start gap-6 border border-border hover:shadow-md transition-shadow">
-              <div className="bg-white p-4 rounded-xl shadow-sm">
-                <HelpCircle className="w-8 h-8 text-teal" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold font-heading text-teal mb-2">FAQs</h3>
-                <p className="text-charcoal/70 mb-4 text-sm">Find answers to common questions about our doula services and support programs.</p>
-                <Link to="#" className="text-teal font-medium text-sm flex items-center gap-1 hover:underline">View FAQs <ChevronRight className="w-4 h-4" /></Link>
-              </div>
-            </div>
-            <div className="bg-beige p-8 rounded-2xl flex items-start gap-6 border border-border hover:shadow-md transition-shadow">
-              <div className="bg-white p-4 rounded-xl shadow-sm">
-                <Newspaper className="w-8 h-8 text-teal" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold font-heading text-teal mb-2">News & Updates</h3>
-                <p className="text-charcoal/70 mb-4 text-sm">Read the latest community stories, events, and announcements from our team.</p>
-                <Link to="#" className="text-teal font-medium text-sm flex items-center gap-1 hover:underline">Read Blog <ChevronRight className="w-4 h-4" /></Link>
-              </div>
-            </div>
+            </Link>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 md:p-12 border border-beige text-center shadow-sm max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold font-heading text-teal mb-4">Equip Yourself for the Journey</h3>
+            <p className="text-charcoal/80 mb-8 max-w-2xl mx-auto text-lg">
+              These free resources are designed to help you and your support team feel confident, prepared, and empowered throughout your birth experience.
+            </p>
+            <Link to="/resources" className="bg-teal text-white px-8 py-4 rounded-full font-semibold hover:bg-teal-dark transition-colors inline-flex items-center gap-2 shadow-sm">
+              Explore All Materials <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
