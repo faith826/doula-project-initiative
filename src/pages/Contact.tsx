@@ -158,62 +158,63 @@ export default function Contact() {
                </div>
              </div>
 
-             {/* Newsletter Section */}
-             <div className="bg-white rounded-2xl p-8 shadow-sm border border-border mt-8">
-               <div className="flex items-start gap-4 mb-6">
-                 <div className="w-12 h-12 rounded-full bg-coral/10 flex items-center justify-center shrink-0">
-                   <Bell className="w-5 h-5 text-coral" />
-                 </div>
-                 <div>
-                   <h3 className="text-xl font-bold font-heading text-teal">Subscribe to our newsletter</h3>
-                   <p className="text-charcoal/60 text-sm mt-1">
-                     Receive updates on workshops, resources, events, and inspiring stories from the community.
-                   </p>
-                 </div>
-               </div>
-
-               <AnimatePresence mode="wait">
-                 {isSubscribed ? (
-                   <motion.div
-                     key="success"
-                     initial={{ opacity: 0, height: 0 }}
-                     animate={{ opacity: 1, height: 'auto' }}
-                     exit={{ opacity: 0, height: 0 }}
-                     className="p-4 bg-teal/10 text-teal-dark rounded-xl text-sm font-semibold flex items-center gap-2 border border-teal/20"
-                   >
-                     <span className="text-base">✓</span> Thank you for subscribing to our newsletter!
-                   </motion.div>
-                 ) : (
-                   <motion.form
-                     key="form"
-                     onSubmit={handleSubscribe}
-                     className="space-y-3"
-                   >
-                     <div className="flex flex-col sm:flex-row gap-3">
-                       <input
-                         type="email"
-                         required
-                         value={newsletterEmail}
-                         onChange={(e) => setNewsletterEmail(e.target.value)}
-                         placeholder="Your email address"
-                         className="flex-grow px-4 py-2.5 rounded-xl border border-border bg-cream/30 text-sm focus:outline-none focus:ring-2 focus:ring-teal/50"
-                       />
-                       <button
-                         type="submit"
-                         className="bg-teal hover:bg-teal-dark text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition-colors cursor-pointer shrink-0"
-                       >
-                         Subscribe
-                       </button>
-                     </div>
-                     <p className="text-[11px] text-charcoal/50 leading-normal">
-                       By subscribing, you agree to receive communications from us. You can unsubscribe at any time.
-                     </p>
-                   </motion.form>
-                 )}
-               </AnimatePresence>
-             </div>
           </div>
           
+        </div>
+
+        {/* Horizontal Newsletter Banner */}
+        <div className="relative overflow-hidden bg-teal rounded-3xl p-8 md:p-12 mt-16 shadow-lg flex flex-col lg:flex-row items-center justify-between gap-8">
+          {/* Subtle Wavy Lines Overlay */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 800 200" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-100,150 C100,100 200,200 400,120 C600,40 700,180 900,80" stroke="white" strokeWidth="4" />
+              <path d="M-50,80 C150,150 300,50 500,140 C700,230 750,90 950,120" stroke="white" strokeWidth="2" />
+            </svg>
+          </div>
+
+          <div className="relative z-10 text-center lg:text-left max-w-md">
+            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-white tracking-tight leading-tight">
+              Sign Up for Our<br className="hidden md:inline" /> Newsletter
+            </h2>
+          </div>
+
+          <div className="relative z-10 w-full lg:max-w-xl">
+            <AnimatePresence mode="wait">
+              {isSubscribed ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="bg-white/10 backdrop-blur-sm text-white rounded-full py-4 px-8 text-sm md:text-base font-bold text-center border border-white/20 shadow-md"
+                >
+                  ✓ Thank you! You have successfully subscribed to our newsletter.
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  onSubmit={handleSubscribe}
+                  className="bg-white rounded-full p-1.5 flex items-center shadow-md w-full"
+                >
+                  <input
+                    type="email"
+                    required
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="flex-grow bg-transparent border-none outline-none focus:outline-none focus:ring-0 text-charcoal px-5 py-3 text-sm md:text-base placeholder-charcoal/40"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-[#1E293B] hover:bg-[#0F172A] text-white font-bold text-xs md:text-sm tracking-widest uppercase px-6 py-3.5 rounded-full transition-colors flex items-center gap-2.5 cursor-pointer shrink-0"
+                  >
+                    <Mail className="w-4 h-4" />
+                    Subscribe
+                  </button>
+                </motion.form>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </div>

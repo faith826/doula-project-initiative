@@ -94,10 +94,9 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-charcoal/50 text-[11px] font-semibold uppercase tracking-widest text-center md:text-left">
-            © {new Date().getFullYear()} The Doula Project Initiative. <br className="md:hidden" />
-            <span className="text-teal">Primary Partner: TNL Partnerships</span> <span className="mx-2 hidden md:inline">|</span> Community Partner: Utulivu Women's Group (UWG)
+            © {new Date().getFullYear()} The Doula Project Initiative.
           </p>
-          <div className="flex gap-6 uppercase tracking-widest text-[11px] font-semibold">
+          <div className="flex gap-6 uppercase tracking-widest text-[11px] font-semibold justify-center md:justify-end">
             <Link to="/privacy-policy" className="text-charcoal/50 hover:text-teal transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-use" className="text-charcoal/50 hover:text-teal transition-colors">Terms of Use</Link>
           </div>
