@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Phone, MapPin, Bell } from 'lucide-react';
-import contactHero from '../assets/images/contact_hero_1784436383338.jpg';
+import contactHero from '../assets/images/contact_hero_uk_1784533172300.jpg';
 
 export default function Contact() {
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -19,7 +19,7 @@ export default function Contact() {
     {
       image: contactHero,
       title: 'Contact Us',
-      subtitle: "We'd love to hear from you. Reach out with any questions, partnership inquiries, or to request doula support."
+      subtitle: "We'd love to hear from you. Reach out with any questions, partnership enquiries, or to request doula support."
     },
     {
       image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1600',
@@ -29,7 +29,7 @@ export default function Contact() {
     {
       image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1600',
       title: 'Dignified Support',
-      subtitle: 'Connecting mothers and families with dedicated, friendly maternal health practitioners across Nairobi.'
+      subtitle: 'Connecting mums and families with dedicated, friendly maternal health practitioners across the UK.'
     }
   ];
 
@@ -134,7 +134,7 @@ export default function Contact() {
                    </div>
                    <div>
                      <h3 className="font-bold text-charcoal">Location</h3>
-                     <p className="text-charcoal/70 text-sm mt-1">123 Community Hub<br/>Nairobi, Kenya</p>
+                     <p className="text-charcoal/70 text-sm mt-1">123 Community Hub<br/>Reading, Berkshire, RG1 1AA, UK</p>
                    </div>
                  </div>
                  <div className="flex items-start gap-4">
@@ -143,7 +143,7 @@ export default function Contact() {
                    </div>
                    <div>
                      <h3 className="font-bold text-charcoal">Phone</h3>
-                     <p className="text-charcoal/70 text-sm mt-1">+254 700 000 000</p>
+                     <p className="text-charcoal/70 text-sm mt-1">+44 (0) 20 7946 0192</p>
                    </div>
                  </div>
                  <div className="flex items-start gap-4">

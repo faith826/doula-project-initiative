@@ -120,11 +120,11 @@ export default function GetInvolvedModal({ isOpen, onClose, initialType }: GetIn
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-charcoal mb-1.5" htmlFor="phone">Phone Number *</label>
-                        <input required type="tel" id="phone" className="w-full px-4 py-3 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-teal/50 bg-cream focus:bg-white transition-colors" placeholder="+254 700 000 000" />
+                        <input required type="tel" id="phone" className="w-full px-4 py-3 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-teal/50 bg-cream focus:bg-white transition-colors" placeholder="+44 7911 123456" />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-charcoal mb-1.5" htmlFor="location">Location / County</label>
-                        <input type="text" id="location" className="w-full px-4 py-3 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-teal/50 bg-cream focus:bg-white transition-colors" placeholder="Nairobi" />
+                        <label className="block text-sm font-medium text-charcoal mb-1.5" htmlFor="location">Location (Town / Borough)</label>
+                        <input type="text" id="location" className="w-full px-4 py-3 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-teal/50 bg-cream focus:bg-white transition-colors" placeholder="Reading" />
                       </div>
                     </div>
 
@@ -162,8 +162,8 @@ export default function GetInvolvedModal({ isOpen, onClose, initialType }: GetIn
                           className="overflow-hidden"
                         >
                           <div className="pt-2">
-                            <label className="block text-sm font-medium text-charcoal mb-1.5" htmlFor="organization">Organization Name</label>
-                            <input type="text" id="organization" className="w-full px-4 py-3 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-teal/50 bg-cream focus:bg-white transition-colors" placeholder="Your Organization" />
+                            <label className="block text-sm font-medium text-charcoal mb-1.5" htmlFor="organization">Organisation Name</label>
+                            <input type="text" id="organization" className="w-full px-4 py-3 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-teal/50 bg-cream focus:bg-white transition-colors" placeholder="Your Organisation" />
                           </div>
                         </motion.div>
                       )}
@@ -179,7 +179,7 @@ export default function GetInvolvedModal({ isOpen, onClose, initialType }: GetIn
                         <input required id="consent" type="checkbox" className="w-4 h-4 rounded border-border text-teal focus:ring-teal" />
                       </div>
                       <label htmlFor="consent" className="text-sm text-charcoal/70">
-                        I agree to be contacted regarding this inquiry by The Doula Project Initiative team.
+                        I agree to be contacted regarding this enquiry by The Doula Project Initiative team.
                       </label>
                     </div>
 

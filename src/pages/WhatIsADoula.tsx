@@ -3,24 +3,24 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, XCircle, HeartHandshake, Baby, Speech, Stethoscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { triggerGetInvolvedModal } from '../components/GetInvolvedModal';
-import doulaHero from '../assets/images/doula_hero_1784436366793.jpg';
+import doulaHero from '../assets/images/doula_hero_uk_1784533158737.jpg';
 
 export default function WhatIsADoula() {
   const slides = [
     {
       image: doulaHero,
       title: 'What Is a Doula?',
-      subtitle: 'A trained birth companion who provides emotional, physical, and informational support during pregnancy, labor, birth, and the postpartum period.'
+      subtitle: 'A trained birth companion who provides emotional, physical, and informational support during pregnancy, labour, birth, and the postnatal period.'
     },
     {
       image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1600',
       title: 'A Compassionate Partner',
-      subtitle: 'Dedicated to walking alongside you, translating medical terms, easing labor fears, and respecting your choices.'
+      subtitle: 'Dedicated to walking alongside you, translating medical terms, easing labour fears, and respecting your choices.'
     },
     {
       image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1600',
       title: 'Dignity in Every Birth',
-      subtitle: 'Empowering families across Nairobi with continuous physical comforting, emotional validation, and education.'
+      subtitle: 'Empowering families across the UK with continuous physical comfort, emotional validation, and education.'
     }
   ];
 
@@ -139,7 +139,7 @@ export default function WhatIsADoula() {
             </ul>
             <div className="mt-6 p-4 bg-coral/10 rounded-xl flex items-start gap-3">
                <Stethoscope className="text-coral shrink-0" />
-               <p className="text-sm text-charcoal/80 italic">Doulas are an addition to your care team, they do not replace your doctors, nurses, or midwives.</p>
+               <p className="text-sm text-charcoal/80 italic">Doulas are an addition to your care team; they work alongside NHS medical professionals and do not replace your midwives, doctors, or obstetricians.</p>
             </div>
           </div>
         </div>
@@ -148,8 +148,8 @@ export default function WhatIsADoula() {
         <h2 className="text-3xl font-bold font-heading text-center text-teal mb-10">The Benefits of Doula Support</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { title: 'Lower Anxiety', icon: HeartHandshake, text: 'Continuous support significantly reduces stress and anxiety during labor.' },
-            { title: 'Shorter Labor', icon: Speech, text: 'Evidence shows doula presence can actually decrease the length of labor.' },
+            { title: 'Lower Anxiety', icon: HeartHandshake, text: 'Continuous support significantly reduces stress and anxiety during labour.' },
+            { title: 'Shorter Labour', icon: Speech, text: 'Evidence shows doula presence can actually decrease the length of labour.' },
             { title: 'Better Bonding', icon: Baby, text: 'Boosts early bonding and increases breastfeeding success rates.' }
           ].map((b, i) => (
             <motion.div 

@@ -27,7 +27,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <img src="https://i.postimg.cc/k4PHWn40/doula.png" alt="The Doula Project Logo" className="h-12 w-auto mix-blend-multiply" />
+              <img src="https://i.postimg.cc/k4PHWn40/doula.png" alt="The Doula Project Logo" className="h-12 w-auto mix-blend-multiply" referrerPolicy="no-referrer" />
             </Link>
           </div>
 

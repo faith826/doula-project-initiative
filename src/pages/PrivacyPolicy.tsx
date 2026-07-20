@@ -107,7 +107,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc pl-6 space-y-2.5">
                 <li>With trusted service providers supporting website operations</li>
                 <li>When required by law</li>
-                <li>To protect the rights, safety, or security of individuals or the organization</li>
+                <li>To protect the rights, safety, or security of individuals or the organisation</li>
               </ul>
             </div>
 
@@ -117,7 +117,7 @@ export default function PrivacyPolicy() {
                 Data Security
               </h2>
               <p>
-                We implement reasonable administrative, technical, and organizational measures to protect your personal information against unauthorized access, disclosure, alteration, or destruction.
+                We implement reasonable administrative, technical, and organisational measures to protect your personal information against unauthorised access, disclosure, alteration, or destruction.
               </p>
               <p className="mt-2.5">
                 However, no method of transmitting information over the internet is completely secure.
@@ -135,7 +135,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc pl-6 space-y-2.5">
                 <li>Improve website performance</li>
                 <li>Remember user preferences</li>
-                <li>Analyze website traffic</li>
+                <li>Analyse website traffic</li>
                 <li>Enhance your browsing experience</li>
               </ul>
               <p className="mt-4">
@@ -169,16 +169,19 @@ export default function PrivacyPolicy() {
                 Your Rights
               </h2>
               <p className="mb-4">
-                Depending on applicable laws, you may have the right to:
+                Under the UK GDPR and the Data Protection Act 2018, you have several rights regarding your personal data:
               </p>
               <ul className="list-disc pl-6 space-y-2.5">
-                <li>Request access to your personal information</li>
-                <li>Request correction of inaccurate information</li>
-                <li>Request deletion of your personal information where appropriate</li>
-                <li>Withdraw consent for communications</li>
+                <li><strong>The right to be informed:</strong> Clear and transparent information about how we use your data.</li>
+                <li><strong>The right of access:</strong> Request access to the personal information we hold about you (a Subject Access Request).</li>
+                <li><strong>The right to rectification:</strong> Request correction of inaccurate or incomplete information.</li>
+                <li><strong>The right to erasure:</strong> Request deletion of your personal information (the 'right to be forgotten') where appropriate.</li>
+                <li><strong>The right to restrict processing:</strong> Limit how we use your personal data.</li>
+                <li><strong>The right to data portability:</strong> Request a copy of your data in a structured, machine-readable format.</li>
+                <li><strong>The right to object:</strong> Object to processing of your personal data based on legitimate interests or for direct marketing.</li>
               </ul>
               <p className="mt-4">
-                To exercise these rights, please contact us using the details provided on our Contact page.
+                To exercise any of these rights, please contact us using the details provided on our Contact page. If you are not satisfied with our response or believe we are processing your personal data unlawfully, you have the right to lodge a complaint with the UK supervisory authority, the Information Commissioner's Office (ICO) (www.ico.org.uk).
               </p>
             </div>
 

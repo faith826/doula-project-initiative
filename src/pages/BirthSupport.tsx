@@ -34,8 +34,9 @@ export default function BirthSupport() {
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1599839619722-39751411ea63?auto=format&fit=crop&q=80" 
-            alt="Doula supporting mother during labor" 
+            alt="Doula supporting mother during labour" 
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-charcoal/50"></div>
         </div>
@@ -50,7 +51,7 @@ export default function BirthSupport() {
               Birth Support
             </h1>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-8">
-              Continuous, reassuring presence and practical comfort measures during your labor and delivery.
+              Continuous, reassuring presence and practical comfort measures during your labour and birth.
             </p>
           </motion.div>
         </div>
@@ -65,7 +66,7 @@ export default function BirthSupport() {
           className="prose prose-lg prose-teal mx-auto"
         >
           <p className="text-xl text-charcoal/80 leading-relaxed mb-12 text-center">
-            Labor can be unpredictable, but you don't have to navigate it alone. We offer continuous physical, emotional, and informational support from the moment active labor begins until your baby is born.
+            Labour can be unpredictable, but you don't have to navigate it alone. We offer continuous physical, emotional, and informational support from the moment active labour begins until your baby is born.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
@@ -74,7 +75,7 @@ export default function BirthSupport() {
                 <Heart className="w-6 h-6 text-coral" /> Continuous Emotional Support
               </h3>
               <p className="text-charcoal/70">
-                We stay by your side throughout labor, providing constant encouragement, reassurance, and a calming presence to help you feel safe and confident.
+                We stay by your side throughout labour, providing constant encouragement, reassurance, and a calming presence to help you feel safe and confident.
               </p>
             </div>
             <div>
@@ -82,7 +83,7 @@ export default function BirthSupport() {
                 <Activity className="w-6 h-6 text-coral" /> Comfort Techniques
               </h3>
               <p className="text-charcoal/70">
-                We use soothing touch, massage, counter-pressure, and position changes to help manage pain and facilitate the progression of labor.
+                We use soothing touch, massage, counter-pressure, and position changes to help manage pain and facilitate the progression of labour.
               </p>
             </div>
             <div>
@@ -107,10 +108,10 @@ export default function BirthSupport() {
             <h3 className="text-2xl font-bold font-heading text-teal mb-4">Benefits of Doula Care During Birth</h3>
             <ul className="space-y-3 text-charcoal/80">
               <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-coral"></div> Reduced need for medical interventions</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-coral"></div> Shorter labor duration</li>
+              <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-coral"></div> Shorter labour duration</li>
               <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-coral"></div> Decrease in the use of pain medication</li>
               <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-coral"></div> Higher satisfaction with the birth experience</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-coral"></div> Lower risk of cesarean sections</li>
+              <li className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-coral"></div> Lower risk of caesarean sections</li>
             </ul>
           </div>
         </motion.div>
@@ -121,7 +122,7 @@ export default function BirthSupport() {
         <div className="bg-teal text-white rounded-[2rem] p-12 shadow-xl">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Need Support During Your Pregnancy Journey?</h2>
           <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-            Our trained doulas are here to provide compassionate, evidence-based support before, during, and after childbirth. Contact us today to learn more about our services or request personalized support.
+            Our trained doulas are here to provide compassionate, evidence-based support before, during, and after childbirth. Contact us today to learn more about our services or request personalised support.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" className="bg-coral text-white px-8 py-4 rounded-lg font-semibold hover:bg-coral/90 transition-colors inline-flex items-center justify-center gap-2 shadow-sm">

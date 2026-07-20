@@ -86,7 +86,7 @@ export default function MyBirthPlan() {
       doc.setFont("helvetica", "normal");
       doc.setFontSize(10);
       doc.setTextColor(100, 100, 100);
-      const subtitle = doc.splitTextToSize("A personal guide to communicate your preferences, support needs, and wishes for labour and delivery with your healthcare team and birth partners.", 170);
+      const subtitle = doc.splitTextToSize("A personal guide to communicate your preferences, support needs, and wishes for labour and birth with your healthcare team and birth partners.", 170);
       doc.text(subtitle, pageWidth / 2, 53, { align: "center" });
 
       let yPos = 70;
@@ -289,7 +289,7 @@ export default function MyBirthPlan() {
               My Birth Plan
             </h1>
             <p className="text-lg text-charcoal/70 mb-8 leading-relaxed max-w-xl">
-              A birth plan is a simple, clear way to communicate your preferences, pain relief choices, and personal wishes with your healthcare team. Use our template to feel empowered and heard during your labour and delivery.
+              A birth plan is a simple, clear way to communicate your preferences, pain relief choices, and personal wishes with your healthcare team. Use our template to feel empowered and heard during your labour and birth.
             </p>
             <div className="flex flex-wrap gap-4">
               <button 
@@ -318,6 +318,7 @@ export default function MyBirthPlan() {
                 src="https://images.unsplash.com/photo-1599580436976-799ff0a8d675?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
                 alt="Healthcare professional talking with pregnant mother" 
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
               />
             </div>
           </motion.div>

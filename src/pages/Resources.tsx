@@ -37,7 +37,7 @@ export default function Resources() {
             Educational Materials for Your Journey
           </h1>
           <p className="text-lg md:text-xl text-charcoal/70 mb-8 leading-relaxed">
-            Download our free resources designed to support expectant mothers and families during pregnancy, birth, and postpartum preparation.
+            Download our free resources designed to support expectant mothers and families during pregnancy, birth, and postnatal preparation.
           </p>
         </motion.div>
       </section>
@@ -88,7 +88,7 @@ export default function Resources() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              Need more personalized support?
+              Need more personalised support?
             </h2>
             <p className="text-lg text-cream/90 mb-8 max-w-2xl mx-auto">
               Our community doulas are here to provide emotional, physical, and informational support throughout your pregnancy and birth journey.

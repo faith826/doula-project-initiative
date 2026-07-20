@@ -8,7 +8,7 @@ const checklistData = [
   {
     title: "Items for Labour",
     items: [
-      "Birth plan and hospital notes",
+      "Birth plan and NHS maternity notes (handheld green notes or maternity app)",
       "Comfortable, loose clothing (e.g., an old nightdress or oversized t-shirt)",
       "Slippers or comfortable indoor shoes",
       "Massage oil or lotion",
@@ -39,7 +39,7 @@ const checklistData = [
       "Muslin squares (3-4)",
       "Socks, scratch mitts, and a hat",
       "An outfit for going home",
-      "Car seat (essential for traveling home)"
+      "Car seat (essential for travelling home)"
     ]
   },
   {
@@ -273,6 +273,7 @@ export default function HospitalBagChecklist() {
                 src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
                 alt="African mother and newborn" 
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
               />
             </div>
           </motion.div>

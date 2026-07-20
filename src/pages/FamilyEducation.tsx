@@ -36,6 +36,7 @@ export default function FamilyEducation() {
             src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?auto=format&fit=crop&q=80" 
             alt="Family participating in maternal health education" 
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-charcoal/50"></div>
         </div>
@@ -65,7 +66,7 @@ export default function FamilyEducation() {
           className="prose prose-lg prose-teal mx-auto"
         >
           <p className="text-xl text-charcoal/80 leading-relaxed mb-12 text-center">
-            A supported mother needs a supportive village. We believe that involving partners and extended family members is crucial for healthy pregnancies, positive birth experiences, and smooth postpartum transitions.
+            A supported mother needs a supportive village. We believe that involving partners and extended family members is crucial for healthy pregnancies, positive birth experiences, and smooth postnatal transitions.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
@@ -74,7 +75,7 @@ export default function FamilyEducation() {
                 <Users className="w-6 h-6 text-coral" /> Partner Support
               </h3>
               <p className="text-charcoal/70">
-                We empower partners with practical tools and knowledge on how to be an active, confident participant during pregnancy, labor, and the early days of parenting.
+                We empower partners with practical tools and knowledge on how to be an active, confident participant during pregnancy, labour, and the early days of parenting.
               </p>
             </div>
             <div>
@@ -98,7 +99,7 @@ export default function FamilyEducation() {
                 <BookOpen className="w-6 h-6 text-coral" /> Parenting Education
               </h3>
               <p className="text-charcoal/70">
-                We provide evidence-based resources and gentle guidance on normal newborn behavior, soothing techniques, safe sleep, and adjusting to your new identities as parents.
+                We provide evidence-based resources and gentle guidance on normal newborn behaviour, soothing techniques, safe sleep, and adjusting to your new identities as parents.
               </p>
             </div>
           </div>
@@ -117,7 +118,7 @@ export default function FamilyEducation() {
         <div className="bg-teal text-white rounded-[2rem] p-12 shadow-xl">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Need Support During Your Pregnancy Journey?</h2>
           <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-            Our trained doulas are here to provide compassionate, evidence-based support before, during, and after childbirth. Contact us today to learn more about our services or request personalized support.
+            Our trained doulas are here to provide compassionate, evidence-based support before, during, and after childbirth. Contact us today to learn more about our services or request personalised support.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" className="bg-coral text-white px-8 py-4 rounded-lg font-semibold hover:bg-coral/90 transition-colors inline-flex items-center justify-center gap-2 shadow-sm">

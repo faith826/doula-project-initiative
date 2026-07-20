@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Shield, Users, Lightbulb, MessageCircle, Scale } from 'lucide-react';
-import aboutHero from '../assets/images/about_hero_1784436352027.jpg';
-import aboutCommunityHero from '../assets/images/about_community_hero_1784437125598.jpg';
+import aboutHero from '../assets/images/about_hero_uk_1784533126741.jpg';
+import aboutCommunityHero from '../assets/images/about_community_uk_1784533143868.jpg';
 
 export default function About() {
   const slides = [
     {
       image: aboutHero,
       title: 'About Us',
-      subtitle: 'A collaborative initiative between TNL Partnerships and Utulivu Women\'s Group dedicated to transforming maternal health with dignity and compassion.'
+      subtitle: 'A collaborative UK initiative between TNL Partnerships and Utulivu Women\'s Group dedicated to transforming maternal health with dignity and compassion.'
     },
     {
       image: aboutCommunityHero,
       title: 'Led by the Community',
-      subtitle: 'Empowering local African women with skills to support mothers before, during, and after childbirth.'
+      subtitle: 'Empowering local Black British and African women living in the UK with skills to support mums before, during, and after childbirth.'
     },
     {
       image: 'https://images.unsplash.com/photo-1504151932400-72d4384f04b3?q=80&w=1600',
       title: 'Deepening Support',
-      subtitle: 'Nurturing maternal health, newborn development, and cultivating strong community family foundations.'
+      subtitle: 'Nurturing maternal health, newborn development, and cultivating strong community family foundations across the UK.'
     }
   ];
 
@@ -154,10 +154,10 @@ export default function About() {
           
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-teal/30 before:to-transparent">
             {[
-              { year: 'Phase 1', title: 'Community Research', desc: 'Understanding local maternal health needs through Participatory Action Research.' },
-              { year: 'Phase 2', title: 'Project Concept', desc: 'Designing community-based intervention models.' },
-              { year: 'Phase 3', title: 'Partnership Formation', desc: 'TNL and UWG officially join forces.' },
-              { year: 'Phase 4', title: 'Doula Program Launch', desc: 'First cohort of community doulas trained and deployed.' }
+              { year: 'Phase 1', title: 'Community Research', desc: 'Understanding maternal health needs within UK Black and minority ethnic families through Participatory Action Research.' },
+              { year: 'Phase 2', title: 'Project Concept', desc: 'Designing community-based intervention models suited to the UK healthcare landscape.' },
+              { year: 'Phase 3', title: 'Partnership Formation', desc: 'TNL Partnerships and UWG officially join forces to launch the initiative.' },
+              { year: 'Phase 4', title: 'Doula Programme Launch', desc: 'First cohort of community doulas trained and deployed in target UK communities.' }
             ].map((item, idx) => (
               <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-cream text-teal shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">

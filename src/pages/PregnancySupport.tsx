@@ -36,6 +36,7 @@ export default function PregnancySupport() {
             src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&q=80" 
             alt="Doula supporting pregnant mother" 
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-charcoal/50"></div>
         </div>
@@ -90,7 +91,7 @@ export default function PregnancySupport() {
                 <CheckCircle2 className="w-6 h-6 text-coral" /> Emotional Wellbeing
               </h3>
               <p className="text-charcoal/70">
-                Pregnancy can bring a mix of emotions. We offer a safe, non-judgmental space to process your feelings, address fears, and cultivate a positive mindset.
+                Pregnancy can bring a mix of emotions. We offer a safe, non-judgemental space to process your feelings, address fears, and cultivate a positive mindset.
               </p>
             </div>
             <div>
@@ -116,7 +117,7 @@ export default function PregnancySupport() {
             </Link>
             <Link to="/resources/my-birth-plan" className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-beige group">
               <h3 className="text-xl font-bold text-charcoal group-hover:text-teal mb-2">My Birth Plan</h3>
-              <p className="text-charcoal/70 text-sm">Document your preferences and choices for labor and delivery with our easy-to-use template.</p>
+              <p className="text-charcoal/70 text-sm">Document your preferences and choices for labour and delivery with our easy-to-use template.</p>
             </Link>
           </div>
         </div>
@@ -127,7 +128,7 @@ export default function PregnancySupport() {
         <div className="bg-teal text-white rounded-[2rem] p-12 shadow-xl">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Need Support During Your Pregnancy Journey?</h2>
           <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-            Our trained doulas are here to provide compassionate, evidence-based support before, during, and after childbirth. Contact us today to learn more about our services or request personalized support.
+            Our trained doulas are here to provide compassionate, evidence-based support before, during, and after childbirth. Contact us today to learn more about our services or request personalised support.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" className="bg-coral text-white px-8 py-4 rounded-lg font-semibold hover:bg-coral/90 transition-colors inline-flex items-center justify-center gap-2 shadow-sm">

@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand & Mission */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <img src="https://i.postimg.cc/k4PHWn40/doula.png" alt="The Doula Project Logo" className="h-12 w-auto mix-blend-multiply" />
+              <img src="https://i.postimg.cc/k4PHWn40/doula.png" alt="The Doula Project Logo" className="h-12 w-auto mix-blend-multiply" referrerPolicy="no-referrer" />
             </Link>
             <p className="text-charcoal/70 text-sm leading-relaxed max-w-xs">
               Improving maternal wellbeing through accessible doula services, community engagement, and evidence-based support systems.
@@ -64,7 +64,7 @@ export default function Footer() {
                 <Link to="/#services" className="text-charcoal/70 hover:text-teal transition-colors text-sm">Birth Support</Link>
               </li>
               <li>
-                <Link to="/#services" className="text-charcoal/70 hover:text-teal transition-colors text-sm">Postpartum Support</Link>
+                <Link to="/#services" className="text-charcoal/70 hover:text-teal transition-colors text-sm">Postnatal Support</Link>
               </li>
               <li>
                 <Link to="/#services" className="text-charcoal/70 hover:text-teal transition-colors text-sm">Family Education</Link>
@@ -78,11 +78,11 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-teal shrink-0 mt-0.5" />
-                <span className="text-charcoal/70 text-sm">123 Community Hub<br/>Nairobi, Kenya</span>
+                <span className="text-charcoal/70 text-sm">123 Community Hub<br/>Reading, Berkshire, RG1 1AA, UK</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-teal shrink-0" />
-                <span className="text-charcoal/70 text-sm">+254 700 000 000</span>
+                <span className="text-charcoal/70 text-sm">+44 (0) 20 7946 0192</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-teal shrink-0" />

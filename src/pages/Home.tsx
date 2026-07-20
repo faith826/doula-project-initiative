@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Activity, Baby, BookHeart, Quote, ArrowRight, ShieldCheck, Users, Search, Download, HelpCircle, Newspaper, Calendar, MapPin, Mail, Phone, ChevronRight, CheckSquare, FileText } from 'lucide-react';
 import { triggerGetInvolvedModal } from '../components/GetInvolvedModal';
-import homeHero from '../assets/images/home_hero_1784436332838.jpg';
+import homeHero from '../assets/images/home_hero_uk_1784533112395.jpg';
 
 function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -106,7 +106,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 className="text-lg text-charcoal/70 leading-relaxed max-w-xl mb-8"
               >
-                Providing continuous emotional, physical, and informational support to mothers through trained community doulas in the heart of our community.
+                Providing continuous emotional, physical, and informational support to mums through trained community doulas in the UK, fully complementing NHS maternity care.
               </motion.p>
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -148,13 +148,13 @@ export default function Home() {
                 Our Partnership
               </div>
               <h2 className="text-3xl md:text-4xl font-bold font-heading text-teal mb-6">
-                A Community-Centered Approach to Maternal Health
+                A Community-Centred Approach to Maternal Health in the UK
               </h2>
               <p className="text-charcoal/80 mb-6 text-lg leading-relaxed">
                 The Doula Project Initiative is a powerful partnership between <strong className="text-teal">TNL Partnerships</strong> and <strong className="text-teal">Utulivu Women's Group (UWG)</strong>. 
               </p>
               <p className="text-charcoal/80 mb-8">
-                Together, we are transforming the birth experience for mothers by ensuring every woman has access to compassionate, dedicated support. We believe that maternal wellbeing is the foundation of a healthy community, and our trained doulas are at the heart of this transformation, providing care that respects culture, dignity, and individual needs.
+                Together, we are transforming the birth experience for mums by ensuring every woman has access to compassionate, dedicated support. We believe that maternal well-being is the foundation of a healthy community, and our trained doulas are at the heart of this transformation, providing care that respects culture, dignity, and individual needs alongside NHS midwives.
               </p>
               <Link to="/about" className="text-coral font-semibold hover:text-coral/80 inline-flex items-center gap-2 transition-colors">
                 Read Our Story <ArrowRight className="w-5 h-5" />
@@ -166,6 +166,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&q=80" 
                   alt="Community support" 
                   className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-cream p-6 rounded-2xl shadow-lg border border-beige">
@@ -207,7 +208,7 @@ export default function Home() {
               },
               {
                 title: 'Physical Comfort',
-                description: 'Hands-on techniques and movement to facilitate labor and ease pain.',
+                description: 'Hands-on techniques and movement to facilitate labour and ease pain.',
                 icon: Activity,
                 color: 'text-sage',
                 bg: 'bg-sage/10'
@@ -220,7 +221,7 @@ export default function Home() {
                 bg: 'bg-gold/10'
               },
               {
-                title: 'Postpartum Guidance',
+                title: 'Postnatal Guidance',
                 description: 'Transitioning smoothly into parenthood with newborn care support.',
                 icon: Baby,
                 color: 'text-coral',
@@ -261,13 +262,13 @@ export default function Home() {
           <div className="grid grid-cols-1 overflow-hidden md:grid-cols-2 rounded-2xl border border-beige bg-cream">
             {[
               { title: 'Pregnancy Support', desc: 'Prenatal visits, birth planning, and emotional readiness.', img: 'https://i.postimg.cc/fL9zVkD7/Pregnancy-Support-1.png', link: '/services/pregnancy-support' },
-              { title: 'Birth Support', desc: 'Continuous presence, advocacy, and comfort measures during labor.', img: 'https://i.postimg.cc/dQhHTrMJ/birth-support-photo.png', link: '/services/birth-support' },
-              { title: 'Postpartum Support', desc: 'In-home visits, feeding support, and maternal recovery.', img: 'https://i.postimg.cc/VvtWZ91z/postpartum-support-photo.png', link: '/services/postpartum-support' },
+              { title: 'Birth Support', desc: 'Continuous presence, advocacy, and comfort measures during labour.', img: 'https://i.postimg.cc/dQhHTrMJ/birth-support-photo.png', link: '/services/birth-support' },
+              { title: 'Postnatal Support', desc: 'In-home visits, feeding support, and maternal recovery.', img: 'https://i.postimg.cc/VvtWZ91z/postpartum-support-photo.png', link: '/services/postnatal-support' },
               { title: 'Family Education', desc: 'Workshops for partners and family members to support the mother.', img: 'https://i.postimg.cc/pTFjP27M/family-education-photo.png', link: '/services/family-education' }
             ].map((service, idx) => (
               <div key={idx} className="flex flex-col sm:flex-row group bg-white border-b border-r border-beige">
                 <div className="sm:w-2/5 aspect-square sm:aspect-auto overflow-hidden">
-                  <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
                 </div>
                 <div className="sm:w-3/5 p-8 flex flex-col justify-center">
                   <h3 className="text-xl font-bold font-heading text-teal mb-2">{service.title}</h3>
@@ -332,7 +333,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="mt-1 bg-sage/20 p-1 rounded-full"><div className="w-2 h-2 rounded-full bg-sage"></div></div>
-                  <span className="text-charcoal/80 text-sm">Improved postpartum mental health wellness</span>
+                  <span className="text-charcoal/80 text-sm">Improved postnatal mental health and well-being</span>
                 </li>
               </ul>
               <Link to="/#resources" className="bg-teal text-white px-6 py-3 rounded-full font-medium hover:bg-teal-dark transition-colors inline-block text-sm">
@@ -385,7 +386,7 @@ export default function Home() {
             {[
               {
                 title: 'Become a Doula',
-                desc: 'Join our training program to support mothers in your community.',
+                desc: 'Join our training programme to support mothers in your community.',
                 icon: Heart,
                 color: 'text-coral',
                 bg: 'bg-coral/10',
@@ -409,7 +410,7 @@ export default function Home() {
               },
               {
                 title: 'Partner With Us',
-                desc: 'Organizations integrating our services to improve maternal health.',
+                desc: 'Organisations integrating our services to improve maternal health.',
                 icon: ShieldCheck,
                 color: 'text-sage',
                 bg: 'bg-sage/10',
@@ -446,7 +447,7 @@ export default function Home() {
                 Resources for Your Journey
               </h2>
               <p className="text-charcoal/80 text-lg">
-                Download our practical guides and templates to help you prepare for labour, birth, and your postpartum experience.
+                Download our practical guides and templates to help you prepare for labour, birth, and your postnatal experience.
               </p>
             </div>
             <Link to="/resources" className="text-teal font-semibold hover:text-teal-dark inline-flex items-center gap-2">
@@ -533,7 +534,7 @@ export default function Home() {
               <div className="flex gap-6 mb-8 text-teal-100">
                  <div className="flex items-center gap-3">
                    <Phone className="w-5 h-5 text-coral" />
-                   <span>+254 700 000 000</span>
+                   <span>+44 (0) 20 7946 0192</span>
                  </div>
                  <div className="flex items-center gap-3">
                    <Mail className="w-5 h-5 text-coral" />

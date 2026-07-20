@@ -1,6 +1,6 @@
 {
   "name": "The Doula Project Initiative",
-  "description": "A maternal health and community empowerment program providing doula support.",
+  "description": "A UK-focused maternal health and community empowerment platform providing doula support alongside NHS midwifery services.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

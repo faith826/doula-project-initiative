@@ -87,7 +87,7 @@ export default function TermsOfUse() {
                 Doula services provide emotional, physical, and informational support but <span className="font-semibold text-charcoal">do not replace the care provided by qualified healthcare professionals</span>, including doctors, nurses, or midwives.
               </p>
               <p>
-                Always seek advice from a qualified healthcare provider regarding any medical concerns related to pregnancy, childbirth, or postpartum care.
+                Always seek advice from a qualified healthcare provider regarding any medical concerns related to pregnancy, childbirth, or postnatal care.
               </p>
             </div>
 
@@ -101,7 +101,7 @@ export default function TermsOfUse() {
               </p>
               <ul className="list-disc pl-6 space-y-2.5">
                 <li>Submit false or misleading information</li>
-                <li>Attempt unauthorized access to the website or its systems</li>
+                <li>Attempt unauthorised access to the website or its systems</li>
                 <li>Upload malicious software or harmful content</li>
                 <li>Disrupt website functionality</li>
                 <li>Use the website for unlawful activities</li>
@@ -193,7 +193,7 @@ export default function TermsOfUse() {
                 Governing Law
               </h2>
               <p>
-                These Terms of Use shall be governed by the applicable laws of the country or jurisdiction in which The Doula Project Initiative operates, unless otherwise required by law.
+                These Terms of Use shall be governed by and construed in accordance with the laws of England and Wales. Any disputes relating to these terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.
               </p>
             </div>
 

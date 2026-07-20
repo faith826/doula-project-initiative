@@ -14,7 +14,7 @@ import HospitalBagChecklist from './pages/HospitalBagChecklist';
 import MyBirthPlan from './pages/MyBirthPlan';
 import PregnancySupport from './pages/PregnancySupport';
 import BirthSupport from './pages/BirthSupport';
-import PostpartumSupport from './pages/PostpartumSupport';
+import PostnatalSupport from './pages/PostnatalSupport';
 import FamilyEducation from './pages/FamilyEducation';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
@@ -32,7 +32,7 @@ export default function App() {
           <Route path="resources/my-birth-plan" element={<MyBirthPlan />} />
           <Route path="services/pregnancy-support" element={<PregnancySupport />} />
           <Route path="services/birth-support" element={<BirthSupport />} />
-          <Route path="services/postpartum-support" element={<PostpartumSupport />} />
+          <Route path="services/postnatal-support" element={<PostnatalSupport />} />
           <Route path="services/family-education" element={<FamilyEducation />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-of-use" element={<TermsOfUse />} />
